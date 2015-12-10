@@ -4,39 +4,45 @@
     <prerequisites><maven>${maven.version.minimum}</maven></prerequisites>
     <groupId>com.github.cassandra-hadoop</groupId>
     <artifactId>cassandra-hadoop</artifactId>
-    <version>0.6-SNAPSHOT</version>
+    <version>0.6</version>
     <packaging>jar</packaging>
 
+    <properties>
+      <cassandra.version>1.2.11</cassandra.version>
+      <hadoop.version>2.7.1</hadoop.version>
+    </properties>
 
     <dependencies>
 
         <dependency>
             <groupId>org.apache.cassandra</groupId>
             <artifactId>cassandra-all</artifactId>
-            <version>1.2.10</version>
+            <version>${cassandra.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.cassandra</groupId>
             <artifactId>cassandra-thrift</artifactId>
-            <version>1.2.10</version>
+            <version>${cassandra.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-common</artifactId>
-            <version>2.2.0</version>
+            <version>${hadoop.version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-mapreduce-client-core</artifactId>
-            <version>2.2.0</version>
+            <version>${hadoop.version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.pig</groupId>
-            <artifactId>pig</artifactId>
-            <version>0.12.0</version>
-            <type>jar</type>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8.1</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
